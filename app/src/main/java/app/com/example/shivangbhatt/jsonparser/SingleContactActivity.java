@@ -22,11 +22,13 @@ public class SingleContactActivity  extends Activity {
     String name;
     String email;
     String mobile;
+    String id;
 	
 	// JSON node keys
-	private static final String TAG_NAME = "name";
-	private static final String TAG_EMAIL = "email";
-	private static final String TAG_PHONE_MOBILE = "mobile";
+	private static final String TAG_ID = "id";
+//	private static final String TAG_EMAIL = "email";
+//	private static final String TAG_PHONE_MOBILE = "mobile";
+    private static final String TAG_AGE = "age";
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,18 +54,18 @@ public class SingleContactActivity  extends Activity {
         Intent in = getIntent();
         
         // Get JSON values from previous intent
-        name = in.getStringExtra(TAG_NAME);
-        email = in.getStringExtra(TAG_EMAIL);
-        mobile = in.getStringExtra(TAG_PHONE_MOBILE);
+        id = in.getStringExtra(TAG_ID);
+//        email = in.getStringExtra(TAG_EMAIL);
+//        mobile = in.getStringExtra(TAG_PHONE_MOBILE);
         
         // Displaying all values on the screen
         TextView lblName = (TextView) findViewById(R.id.name_label);
         TextView lblEmail = (TextView) findViewById(R.id.email_label);
         TextView lblMobile = (TextView) findViewById(R.id.mobile_label);
         
-        lblName.setText(name);
-        lblEmail.setText(email);
-        lblMobile.setText(mobile);
+        lblName.setText(id);
+//        lblEmail.setText(email);
+//        lblMobile.setText(mobile);
 
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
